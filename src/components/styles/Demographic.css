@@ -1,0 +1,60 @@
+/* styles/DemographicCollection.css */
+
+.DemographicCollection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .demographicQuestions{
+    width: 70%;
+  }
+  
+  .demographicQuestions h2{
+    font-size: calc(1rem + 1vw);
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    margin-bottom: 1em;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    margin-bottom: 2em;
+  }
+  
+  select {
+    width: 40vw;
+    padding: 0.5em;
+    margin-bottom: 1em;
+
+ 
+    font-family: "Montserrat";
+    border-radius: 1em;
+    margin: .2em 4vw;
+    font-size: calc(.6rem + .7vw);
+  }
+ 
+  
+  button[type="submit"] {
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .demographicButton {
+    padding: 0.5em 1em;
+    background-color: gray;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .demographicButton:hover {
+    background-color: darkgray;
+  }
+  

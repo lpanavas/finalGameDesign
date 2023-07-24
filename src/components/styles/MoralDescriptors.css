@@ -1,0 +1,79 @@
+
+
+.moral-descriptors{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1em;
+    width: 90%;
+    padding: 1em;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+}
+.moral-descriptors h3 {
+    margin: 1em 0em;
+}
+
+.image-container {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.image-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-wrapper img {
+    width: 100%; /* Changed to ensure images take the full width of the button */
+    height: 100%; /* Changed to maintain the aspect ratio of the images */
+    max-height: 12em;
+    border-radius: 1em;
+    /* object-fit: cover;  */
+}
+
+.image-wrapper button, .image-wrapper a.button {
+
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    height: 35vw;
+    max-height: 15em;
+    width: auto;
+    display: block; /* Added to make the button take the full size of its parent */
+}
+
+.image-wrapper button:hover, .image-wrapper a.button:hover {
+    transform: scale(1.1);
+}
+
+.unsure-button {
+    border-radius: 2em;
+
+    border: none;
+    padding: 0.5em 1em;
+    background-color: rgba(119, 88, 255, 0.12);
+    color: rgba(119, 88, 255, 1);
+    font-weight: bold;
+    font-size: calc(.8rem + .7vw);
+        cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.unsure-button:hover {
+    background:rgba(119, 88, 255, .5);
+    color: white;
+}
+
+.image-wrapper img {
+    transition: transform 0.8s ease-in-out;
+}
+
+.image-pop-up {
+    transform: scale(1.2);
+}

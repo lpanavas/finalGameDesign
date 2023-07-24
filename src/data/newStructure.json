@@ -1,0 +1,109 @@
+{
+  "order": ["pairwise_comparison", "pairwise_comparison2"],
+  "games": {
+    "pairwise_comparison": {
+      "technologies": [
+        {
+          "title": "Unlock your smartphone",
+          "description": "Facial recognition can be used to unlock smartphones, providing a secure and personalized access method."
+        },
+        {
+          "title": "Analyze your physical health",
+          "description": "The technology can analyze facial features to indicate signs of certain health conditions."
+        },
+        {
+          "title": "Pay with your face",
+          "description": "Facial recognition can be used for payment verification, replacing the need for cash or cards."
+        },
+        {
+          "title": "Enter a building",
+          "description": "Buildings can use facial recognition for access control, improving security and convenience."
+        },
+        {
+          "title": "Access government services",
+          "description": "Government services can use facial recognition to verify identities, simplifying the process for accessing services."
+        },
+        {
+          "title": "Apply for a passport online",
+          "description": "Facial recognition can streamline the online passport application process by confirming the applicant's identity."
+        },
+        {
+          "title": "Tagged in social media",
+          "description": "Social media platforms can use facial recognition to identify and tag individuals in photos."
+        },
+        {
+          "title": "Identify a person in a crowd",
+          "description": "Facial recognition can identify individuals in large crowds, useful for security and surveillance purposes."
+        },
+        {
+          "title": "Classify faces by ethnicity",
+          "description": "The technology can categorize faces based on their ethnic features, though this application has raised ethical concerns."
+        },
+        {
+          "title": "Monitor workers",
+          "description": "Facial recognition can monitor employees' attendance and work hours, helping businesses manage their workforce."
+        },
+        {
+          "title": "Tool for foreign policy",
+          "description": "Governments can use facial recognition as a tool for foreign policy, particularly in security and surveillance operations."
+        },
+        {
+          "title": "Tool to wage war",
+          "description": "Facial recognition can play a crucial role in modern warfare, including drone targeting and identifying enemy combatants."
+        }
+      ]
+    },
+    "pairwise_comparison2": {
+      "technologies": [
+        {
+          "title": "Aerial photography and videography",
+          "description": "Drones can capture stunning aerial photographs and videos for various purposes like filmmaking, real estate, and landscape analysis."
+        },
+        {
+          "title": "Search and rescue operations",
+          "description": "Drones equipped with thermal cameras and GPS capabilities can assist in locating missing persons or survivors in search and rescue missions."
+        },
+        {
+          "title": "Delivery services",
+          "description": "Drone delivery systems enable efficient and fast delivery of packages and goods, especially in remote or hard-to-reach areas."
+        },
+        {
+          "title": "Infrastructure inspection",
+          "description": "Drones equipped with high-resolution cameras and sensors can inspect infrastructure such as bridges, power lines, and pipelines, providing cost-effective and safer alternatives to traditional inspection methods."
+        },
+        {
+          "title": "Agricultural monitoring",
+          "description": "Drones equipped with multispectral or hyperspectral cameras can monitor crops, assess plant health, and help optimize farming practices."
+        },
+        {
+          "title": "Wildlife conservation",
+          "description": "Drones can aid in wildlife conservation efforts by monitoring endangered species, tracking animal populations, and detecting illegal poaching activities."
+        },
+        {
+          "title": "Disaster assessment and management",
+          "description": "Drones can provide real-time aerial views of disaster-affected areas, assisting in damage assessment, resource allocation, and emergency response coordination."
+        },
+        {
+          "title": "Surveillance and security",
+          "description": "Drones equipped with cameras and sensors can enhance surveillance and security measures, monitoring public spaces, critical infrastructure, and borders."
+        },
+        {
+          "title": "Environmental monitoring",
+          "description": "Drones can collect data on air quality, water pollution, and ecosystem changes, aiding environmental research and monitoring efforts."
+        },
+        {
+          "title": "Scientific research and exploration",
+          "description": "Drones can assist scientists in conducting research in remote or inaccessible areas, such as studying volcanoes, mapping glaciers, or monitoring marine life."
+        },
+        {
+          "title": "Drone racing and entertainment",
+          "description": "Drone racing has gained popularity as a competitive sport, and drones equipped with cameras can provide exhilarating first-person view experiences for entertainment purposes."
+        },
+        {
+          "title": "Military and defense applications",
+          "description": "Drones play a crucial role in military and defense operations, including reconnaissance, surveillance, target acquisition, and combat missions."
+        }
+      ]
+    }
+  }
+}
