@@ -16,10 +16,13 @@ exports.calculateRankings = async (req, res) => {
   const { cards, demographics } = req.body;
   const key = Object.keys(demographics)[0];
   const value = demographics[key];
+  console.log(req.body);
 
-  const allGameData = await GameData.aggregate([
+  const pipeline = [
     { $unwind: "$outputData" },
-    { $match: { [`outputData.demographics.${key}`]: value } },
+    ...(key !== "" && value !== ""
+      ? [{ $match: { [`outputData.demographics.${key}`]: value } }]
+      : []),
     { $unwind: "$outputData.CardMatchups" },
     {
       $match: {
@@ -27,7 +30,11 @@ exports.calculateRankings = async (req, res) => {
         "outputData.CardMatchups.Card2": { $in: cards },
       },
     },
-  ]);
+  ];
+
+  const allGameData = await GameData.aggregate(pipeline);
+
+  console.log(allGameData);
 
   let rankings = {};
   let ratings = {};
@@ -116,6 +123,7 @@ exports.calculateRankings = async (req, res) => {
       }
     }
   }
+  console.log(rankings, ratings);
   res.json({ rankings, ratings });
 };
 

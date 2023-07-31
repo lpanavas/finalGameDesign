@@ -1,7 +1,7 @@
 [
   {
     "reference": "Amendments 712: AI systems intended to make inferences about personal characteristics of natural persons on the basis of biometric or biometrics-based data, excluding those used for biometric verification whose sole purpose is to confirm a specific natural person's identity.",
-    "title": "AI system designed to infer personal characteristics using biometrics",
+    "title": "AI system designed for infer personal characteristics using biometrics",
     "ID": "PersonalCharInference",
     "classification": "High risk",
     "semanticModel": {
@@ -430,6 +430,216 @@
       "AI_capability": "Any",
       "AI_user": "Judicial Authority",
       "AI_subject": "Any"
+    }
+  },
+  {
+    "reference": "Title 2: AI systems deploying subliminal techniques beyond a person’s consciousness to materially distort a person’s behaviour that causes or is likely to cause physical or psychological harm;",
+    "title": "AI system designed for using subliminal techniques to distort behavior, causing harm",
+    "ID": "SubliminalManipulation",
+    "classification": "Unacceptable risk",
+    "semanticModel": {
+      "domain": "Any",
+      "purpose": "Behavioral Manipulation",
+      "AI_capability": "Subliminal Perception Manipulation",
+      "AI_user": "Any",
+      "AI_subject": "Any"
+    }
+  },
+
+  {
+    "reference": "Title 2: AI systems that distort the behaviour of a person pertaining to a specific group in a manner that causes or is likely to cause physical or psychological harm;",
+    "title": "AI system designed for exploiting vulnerable groups to cause harm.",
+    "ID": "BehaviorDistortion",
+    "classification": "Unacceptable risk",
+    "semanticModel": {
+      "domain": "Any",
+      "purpose": "Behavioral Distortion",
+      "AI_capability": "Any",
+      "AI_user": "Any",
+      "AI_subject": "Specific Group (Based on Age, Physical Disability, Mental Disability)"
+    }
+  },
+  {
+    "reference": "AI systems used by public authorities for evaluating or classifying the trustworthiness of natural persons over a certain period based on their social behaviour or personal/ personality characteristics, with the social score leading to detrimental or unfavourable treatment;",
+    "title": "AI system designed for social scoring leading to different treatment of individuals.",
+    "ID": "SocialScoring",
+    "classification": "Unacceptable risk",
+    "semanticModel": {
+      "domain": "Any",
+      "purpose": "Behavioral Analysis & Scoring",
+      "AI_capability": "Any",
+      "AI_user": "Public Authority",
+      "AI_subject": "Any"
+    }
+  },
+  {
+    "reference": "Title 2: AI systems for real-time remote biometric identification in public spaces for law enforcement purposes",
+    "title": "AI system designed for real-time remote biometric identification in public spaces for law enforcement",
+    "ID": "BiometricIdentificationLawEnforcement",
+    "classification": "Unacceptable risk",
+    "semanticModel": {
+      "domain": "Law Enforcement",
+      "purpose": "Biometric Identification in Real-time",
+      "AI_capability": "Real-Time Remote Biometric Identification",
+      "AI_user": "Law Enforcement Agencies",
+      "AI_subject": "Public in Accessible Spaces"
+    }
+  },
+
+  {
+    "reference": "",
+    "title": "AI system designed for detecting faulty equipment in factories",
+    "ID": "FaultDetectionInFactories",
+    "classification": "Low Risk",
+    "semanticModel": {
+      "domain": "Manufacturing",
+      "purpose": "Fault Detection",
+      "AI_capability": "Anomaly Detection",
+      "AI_user": "Factory Operators",
+      "AI_subject": "Equipment"
+    }
+  },
+  {
+    "reference": "",
+    "title": "AI system designed for automated trading in stock markets",
+    "ID": "AutomatedTrading",
+    "classification": "Low Risk",
+    "semanticModel": {
+      "domain": "Finance",
+      "purpose": "Trading",
+      "AI_capability": "Predictive Analytics",
+      "AI_user": "Traders",
+      "AI_subject": "Stocks"
+    }
+  },
+  {
+    "reference": "",
+    "title": "AI system designed for personalized news feed curation",
+    "ID": "NewsFeedCuration",
+    "classification": "Low Risk",
+    "semanticModel": {
+      "domain": "News",
+      "purpose": "Recommendation",
+      "AI_capability": "Predictive Analytics",
+      "AI_user": "News Readers",
+      "AI_subject": "News"
+    }
+  },
+  {
+    "reference": "",
+    "title": "AI system designed for personalized advertisement targeting",
+    "ID": "AdTargeting",
+    "classification": "Low Risk",
+    "semanticModel": {
+      "domain": "Advertising",
+      "purpose": "Ad Targeting",
+      "AI_capability": "Predictive Analytics",
+      "AI_user": "Advertisers",
+      "AI_subject": "Consumer"
+    }
+  },
+  {
+    "reference": "",
+    "title": "AI system designed for pre-employment background checks",
+    "ID": "PreEmploymentBackgroundChecks",
+    "classification": "Low Risk",
+    "semanticModel": {
+      "domain": "Human Resources",
+      "purpose": "Background Checks",
+      "AI_capability": "Data Mining",
+      "AI_user": "Employers",
+      "AI_subject": "Job Applicants"
+    }
+  },
+  {
+    "reference": "",
+    "title": "AI system designed for predicting health risks based on genetic data",
+    "ID": "GeneticHealthRiskPrediction",
+    "classification": "Low Risk",
+    "semanticModel": {
+      "domain": "Healthcare",
+      "purpose": "Health Risk Prediction",
+      "AI_capability": "Predictive Analytics",
+      "AI_user": "Doctors",
+      "AI_subject": "Patients"
+    }
+  },
+  {
+    "reference": "",
+    "title": "AI system designed for content moderation on social media platforms",
+    "ID": "ContentModeration",
+    "classification": "Low Risk",
+    "semanticModel": {
+      "domain": "Social Media",
+      "purpose": "Content Moderation",
+      "AI_capability": "Image/Text Classification",
+      "AI_user": "Social Media Platforms",
+      "AI_subject": "Social Media Content"
+    }
+  },
+  {
+    "reference": "",
+    "title": "AI system designed for automated decision-making in healthcare",
+    "ID": "AutomatedHealthcareDecisionMaking",
+    "classification": "Low Risk",
+    "semanticModel": {
+      "domain": "Healthcare",
+      "purpose": "Automated Decision-making",
+      "AI_capability": "Machine Learning",
+      "AI_user": "Healthcare Providers",
+      "AI_subject": "Patients"
+    }
+  },
+  {
+    "reference": "",
+    "title": "AI system designed for synthesizing new drug compounds",
+    "ID": "DrugCompoundSynthesis",
+    "classification": "Low Risk",
+    "semanticModel": {
+      "domain": "Pharmaceuticals",
+      "purpose": "Drug Synthesis",
+      "AI_capability": "Machine Learning",
+      "AI_user": "Pharmaceutical Companies",
+      "AI_subject": "Drug Compounds"
+    }
+  },
+  {
+    "reference": "",
+    "title": "AI system designed for creating deep fakes",
+    "ID": "DeepFakeCreation",
+    "classification": "On the brink of High Risk",
+    "semanticModel": {
+      "domain": "Multimedia Content Creation",
+      "purpose": "Content Creation",
+      "AI_capability": "Generative Adversarial Networks",
+      "AI_user": "Content Creators",
+      "AI_subject": "Media Content"
+    }
+  },
+  {
+    "reference": "",
+    "title": "AI system designed for fact-checking on social media",
+    "ID": "FactCheckingOnSocialMedia",
+    "classification": "Low Risk",
+    "semanticModel": {
+      "domain": "Social Media",
+      "purpose": "Fact Checking",
+      "AI_capability": "Natural Language Processing",
+      "AI_user": "Social Media Platforms",
+      "AI_subject": "Social Media Content"
+    }
+  },
+  {
+    "reference": "",
+    "title": "AI system designed for personalized learning in education",
+    "ID": "PersonalizedLearning",
+    "classification": "On the brink of High Risk",
+    "semanticModel": {
+      "domain": "Education",
+      "purpose": "Personalized Learning",
+      "AI_capability": "Machine Learning",
+      "AI_user": "Educators",
+      "AI_subject": "Students"
     }
   }
 ]

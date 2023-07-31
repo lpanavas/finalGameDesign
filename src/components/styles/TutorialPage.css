@@ -1,0 +1,73 @@
+.tutorialBackgroud{
+    margin: 0 auto;
+    width: 90%;
+    height: 100vh;
+    background-color: #fff;
+    position: relative;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 1.5em;
+
+    border: none;
+    box-sizing: border-box;
+    text-align: center;
+    background-color: #f3f3f7;
+}
+
+.tutorialHeader {
+    /* Add styling for the header here. */
+}
+
+.tutorialText {
+    /* Add styling for the tutorial text here. */
+}
+
+.tutorialImageContainer {
+    width: 100%;
+    margin-top: 1em;
+  
+}
+
+@media (min-width: 1000px) {
+    .tutorialImageContainer {
+        width: 60%;
+    }
+}
+
+/* For desktops */
+@media (min-width: 1800px) {
+    .tutorialImageContainer {
+        width: 35%;
+    }
+}
+
+.tutorialImage {
+    width: 100%;
+    height: auto;
+    object-fit: contain; /* This makes sure the image maintains its aspect ratio. */
+}
+
+/* For tablets */
+
+
+.tutorialButtons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 500px; /* Or whatever max-width you want. */
+}
+
+.previousTutorialButton,
+.startTutorialButton,
+.nextTutorialButton {
+    margin-top: 1em;
+    width: 10em;
+    font-size: calc(.8rem + .4vw);
+
+}
+.invisibleButton {
+    visibility: hidden;
+}

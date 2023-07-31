@@ -50,8 +50,17 @@ const PairwiseGame = ({
   const [sendToDemographicData, setSendToDemographicData] = useState();
   const [riskAnswer, setRiskAnswer] = useState(null);
   const [riskAnswerOuput, setRiskAnswerOutput] = useState({});
+  // Initialize the extraPair state with the specific pair of cards
+  const [extraPair, setExtraPair] = useState([
+    { ID: "Nuclear", title: "Nuclear Weapons" },
+    { ID: "Candy", title: "Cotton Candy Machines" },
+  ]);
+  const [attentionCheck, setAttentionCheck] = useState(null);
+  const [startTime, setStartTime] = useState(null); // new state for start time
 
   useEffect(() => {
+    setStartTime(Date.now()); // start the timer
+
     if (technologies.length > 0) {
       // Shuffle technologies array
       let shuffledTechnologies = [...technologies];
@@ -75,14 +84,12 @@ const PairwiseGame = ({
         tempShuffledTechnologies.push(pair1);
       }
 
-      // Shuffle tempShuffledTechnologies
-      for (let i = tempShuffledTechnologies.length - 1; i > 0; i--) {
-        let j = Math.floor(Math.random() * (i + 1));
-        [tempShuffledTechnologies[i], tempShuffledTechnologies[j]] = [
-          tempShuffledTechnologies[j],
-          tempShuffledTechnologies[i],
-        ];
-      }
+      // Select random index for the extra pair, which is not 0 (not the first position)
+      let extraPairIndex =
+        Math.floor(Math.random() * (tempShuffledTechnologies.length - 1)) + 1;
+
+      // Add extra pair at the random index
+      tempShuffledTechnologies.splice(extraPairIndex, 0, extraPair);
 
       setShuffledTechnologies(tempShuffledTechnologies);
 
@@ -97,12 +104,28 @@ const PairwiseGame = ({
           opponents: {}, // Keep track of wins, losses, and ties against each opponent
         };
       });
+
+      // Add rankings for extra pair
+      extraPair.forEach((tech) => {
+        if (!initialRankings[tech.title]) {
+          initialRankings[tech.title] = {
+            descriptors: [],
+            wins: 0,
+            losses: 0,
+            ties: 0,
+            opponents: {}, // Keep track of wins, losses, and ties against each opponent
+          };
+        }
+      });
+
       setRankings(initialRankings);
     }
-  }, [technologies]);
+  }, [technologies, extraPair]);
 
   useEffect(() => {
-    if (currentPairIndex >= technologies.length) {
+    if (currentPairIndex >= technologies.length + 1) {
+      const endTime = Date.now();
+      const gameDurationInSeconds = (endTime - startTime) / 1000;
       setSendToDemographicData({
         UserID: userID, // this should be fetched dynamically
         demographics: demographics,
@@ -110,6 +133,8 @@ const PairwiseGame = ({
 
         CardMatchups: cardMatchups,
         Moral: moralChoices,
+        Attention: attentionCheck,
+        gameDuration: gameDurationInSeconds,
       });
 
       // Output the final JSON
@@ -120,6 +145,8 @@ const PairwiseGame = ({
           risk: riskAnswerOuput,
           CardMatchups: cardMatchups,
           Moral: moralChoices,
+          Attention: attentionCheck,
+          gameDuration: gameDurationInSeconds,
         };
 
         setOutputData(finalData);
@@ -139,7 +166,7 @@ const PairwiseGame = ({
   }, [currentPairIndex]);
 
   const calculateProgress = () => {
-    const totalPairs = Math.floor(technologies.length);
+    const totalPairs = Math.floor(technologies.length + 1);
     const currentProgress = (currentPairIndex / totalPairs) * 100;
     setProgress(currentProgress);
   };
@@ -153,28 +180,33 @@ const PairwiseGame = ({
       return; // If a card is already selected, do nothing
     }
 
-    const chosenCard = chosenIndex % 2 === 0 ? 0 : 1;
+    const chosenCard = shuffledTechnologies[currentPairIndex][chosenIndex % 2];
 
-    setSelectedCard(shuffledTechnologies[currentPairIndex][chosenCard]);
+    // Check if the chosen card is part of the extra pair
+    if (extraPair.some((extraCard) => extraCard.ID === chosenCard.ID)) {
+      // If it is, update finalData
+      setAttentionCheck(chosenCard.ID);
+      handleSkip();
+    } else {
+      setSelectedCard(chosenCard);
 
-    setSelectedIndex(chosenIndex);
+      setSelectedIndex(chosenIndex);
 
-    setUnselectedCard(
-      shuffledTechnologies[currentPairIndex][(chosenCard + 1) % 2]
-    );
+      setUnselectedCard(
+        shuffledTechnologies[currentPairIndex][(chosenIndex + 1) % 2]
+      );
 
-    setSelectionMade(true);
-    setAgreementAnswer(null);
+      setSelectionMade(true);
+
+      setAgreementAnswer(null);
+    }
   };
 
   const renderTechnologyCard = () => {
     const tech1 = shuffledTechnologies[currentPairIndex][0];
     const tech2 = shuffledTechnologies[currentPairIndex][1];
-    // Define default percents
-    let selectedPercent = 50;
-    let unselectedPercent = 50;
 
-    // The current pair from shuffledTechnologies
+    // Define default percents
     let selectedPercent1 = 50;
     let unselectedPercent1 = 50;
 
@@ -185,19 +217,26 @@ const PairwiseGame = ({
       (tech) => tech.ID
     );
 
-    for (let i = 0; i < pairwiseData.data.length; i++) {
-      const pair = pairwiseData.data[i].pair;
+    // Check if current pair is not the extra pair
+    if (
+      !extraPair.some(
+        (extraCard) => extraCard.ID === tech1.ID || extraCard.ID === tech2.ID
+      )
+    ) {
+      for (let i = 0; i < pairwiseData.data.length; i++) {
+        const pair = pairwiseData.data[i].pair;
 
-      if (pair.sort().join(",") === currentPair.sort().join(",")) {
-        const percentages = pairwiseData.data[i].percentages;
+        if (pair.sort().join(",") === currentPair.sort().join(",")) {
+          const percentages = pairwiseData.data[i].percentages;
 
-        selectedPercent1 = percentages[tech1.ID];
-        unselectedPercent1 = 100 - selectedPercent1;
+          selectedPercent1 = percentages[tech1.ID];
+          unselectedPercent1 = 100 - selectedPercent1;
 
-        selectedPercent2 = percentages[tech2.ID];
-        unselectedPercent2 = 100 - selectedPercent2;
+          selectedPercent2 = percentages[tech2.ID];
+          unselectedPercent2 = 100 - selectedPercent2;
 
-        break;
+          break;
+        }
       }
     }
 
@@ -269,10 +308,10 @@ const PairwiseGame = ({
     }
 
     if (AgreementResult === "correct") {
-      setAgreementResult("Correct");
+      setAgreementResult("Correct, +10 points!");
       setScore((prevScore) => prevScore + 10);
     } else {
-      setAgreementResult("Incorrect");
+      setAgreementResult("Incorrect, 0 points.");
       // setScore remains unchanged
     }
 
@@ -295,7 +334,7 @@ const PairwiseGame = ({
     setShowAgreementResult(true); // Initially set showAgreementResult to true
     setTimeout(() => {
       setShowAgreementResult(false); // After a second, set showAgreementResult back to false
-    }, 2000);
+    }, 3000);
 
     setShowDescriptorImages(true);
     setAgreementAnswer(answer);
@@ -416,7 +455,7 @@ const PairwiseGame = ({
 
             {selectedCard && !riskAnswer && !agreementAnswer && (
               <div className="agreement-question">
-                <h3>Do most people agree with you?</h3>
+                <h3>Do you think most people agree with you?</h3>
 
                 <div className="button-container">
                   <button onClick={() => handleAgreementAnswer("yes")}>
@@ -433,12 +472,14 @@ const PairwiseGame = ({
             )}
             {selectedCard && agreementAnswer && showAgreementResult && (
               <div className="agreement-question">
-                <h3>Do most people agree with you?</h3>
+                <h3>Do you think most people agree with you?</h3>
 
                 <div className="button-container">
                   <p
                     className={
-                      agreementResult === "Correct" ? "correct" : "incorrect"
+                      agreementResult === "Correct, +10 points!"
+                        ? "correct"
+                        : "incorrect"
                     }
                   >
                     {agreementResult}

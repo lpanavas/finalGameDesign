@@ -1,24 +1,6 @@
 import React, { useState } from "react";
 import { useSpring, useTransition, animated as a } from "react-spring";
 import "./styles/MoralDescriptors.css";
-import authorityPositive from "../images/AuthorityPositive.jpg";
-import authorityNegative from "../images/AuthorityNegative.jpg";
-import fairPositive from "../images/FairPositive.jpg";
-import fairNegative from "../images/FairNegative.jpg";
-import loyaltyPositive from "../images/LoyaltyPositive.jpg";
-import loyaltyNegative from "../images/LoyaltyNegative.jpg";
-import harmNegative from "../images/HarmNegative.jpg";
-import harmPositive from "../images/HarmPositive.jpg";
-import purityPositive from "../images/PurityPositive.jpg";
-import purityNegative from "../images/PurityNegative.jpg";
-
-const shuffleArray = (array) => {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]]; // destructuring assignment to swap values
-  }
-  return array;
-};
 
 const MoralDescriptors = ({
   moralDescriptors,
@@ -27,21 +9,21 @@ const MoralDescriptors = ({
   selectedCard,
 }) => {
   const [currentDescriptorIndex, setCurrentDescriptorIndex] = useState(0);
-  const [selectedImages, setSelectedImages] = useState({
-    positive: null,
-    negative: null,
+  const [selectedAnswers, setSelectedAnswers] = useState({
+    yes: null,
+    no: null,
   });
 
-  const handleImageSelection = (selectedImage) => {
-    if (selectedImage === "positive") {
-      setSelectedImages({
-        ...selectedImages,
-        positive: moralDescriptors[currentDescriptorIndex],
+  const handleAnswerSelection = (selectedAnswer) => {
+    if (selectedAnswer === "yes") {
+      setSelectedAnswers({
+        ...selectedAnswers,
+        yes: moralDescriptors[currentDescriptorIndex],
       });
-    } else if (selectedImage === "negative") {
-      setSelectedImages({
-        ...selectedImages,
-        negative: moralDescriptors[currentDescriptorIndex],
+    } else if (selectedAnswer === "no") {
+      setSelectedAnswers({
+        ...selectedAnswers,
+        no: moralDescriptors[currentDescriptorIndex],
       });
     }
 
@@ -51,75 +33,48 @@ const MoralDescriptors = ({
       setCurrentDescriptorIndex(currentDescriptorIndex + 1);
     }
   };
-  const getImageSource = (descriptor) => {
+
+  const getQuestion = (descriptor) => {
     switch (descriptor) {
       case "Authority":
-        return {
-          positive: {
-            source: authorityPositive,
-            description: "Respectful",
-          },
-          negative: {
-            source: authorityNegative,
-            description: "Disobedient",
-          },
-        };
+        return [
+          "This technology ",
+          <strong key="1">respects authority</strong>,
+          " and aligns with societal norms",
+        ];
       case "Fair":
-        return {
-          positive: {
-            source: fairPositive,
-            description: "Fair",
-          },
-          negative: {
-            source: fairNegative,
-            description: "Unjust",
-          },
-        };
+        return [
+          "This technology operates in a ",
+          <strong key="2">fair</strong>,
+          " and just way",
+        ];
       case "Loyalty":
-        return {
-          positive: {
-            source: loyaltyPositive,
-            description: "Loyal",
-          },
-          negative: {
-            source: loyaltyNegative,
-            description: "Traitor",
-          },
-        };
+        return [
+          "This technology promotes ",
+          <strong key="3">loyalty</strong>,
+          " and unity",
+        ];
       case "Harm":
-        return {
-          positive: {
-            source: harmPositive,
-            description: "Protective",
-          },
-          negative: {
-            source: harmNegative,
-            description: "Harmful",
-          },
-        };
+        return [
+          "This technology ",
+          <strong key="4">avoids causing harm</strong>,
+          " or pain to individuals",
+        ];
       case "Purity":
-        return {
-          positive: {
-            source: purityPositive,
-            description: "Decent",
-          },
-          negative: {
-            source: purityNegative,
-            description: "Indecent",
-          },
-        };
+        return [
+          "This technology is ",
+          <strong key="5">pure</strong>,
+          " and does not contaminate or corrupt",
+        ];
       default:
-        return {
-          positive: { source: "", description: "" },
-          negative: { source: "", description: "" },
-        };
+        return "";
     }
   };
 
   const currentDescriptor = moralDescriptors[currentDescriptorIndex];
-  const imageSources = getImageSource(currentDescriptor);
+  const currentQuestion = getQuestion(currentDescriptor);
 
-  // setup transition for images
+  // setup transition for questions
   const transitions = useTransition(currentDescriptorIndex, {
     from: { opacity: 0, transform: "scale(0)" },
     enter: { opacity: 1, transform: "scale(1)" },
@@ -132,14 +87,14 @@ const MoralDescriptors = ({
     config: { tension: 210, friction: 20 },
   }));
 
-  const handleButtonClick = (selectedImage) => {
+  const handleButtonClick = (selectedAnswer) => {
     setButtonProps({ scale: 1.1 });
-    handleImageSelection(selectedImage);
+    handleAnswerSelection(selectedAnswer);
     setMoralChoices((prevChoices) => ({
       ...prevChoices,
       [selectedCard.ID]: {
         ...(prevChoices[selectedCard.ID] || {}),
-        [currentDescriptor]: selectedImage,
+        [currentDescriptor]: selectedAnswer,
       },
     }));
 
@@ -149,53 +104,53 @@ const MoralDescriptors = ({
 
   return (
     <div className="moral-descriptors">
-      <h3>How would you describe this technology?</h3>
-      <div className="image-container">
+      <h3
+        style={{
+          fontSize: "calc(.8rem + 1vw)",
+          fontWeight: "normal",
+          letterSpacing: "0.02em",
+        }}
+      >
+        {currentQuestion}
+      </h3>{" "}
+      <div className="questions-container">
         {transitions((style, item) => (
-          <>
-            <div className="image-wrapper">
+          <a.div style={style} className="question-wrapper">
+            <div className="answers-wrapper">
               <a.button
                 style={buttonProps}
-                onClick={() => handleButtonClick("positive")}
+                onClick={() => handleButtonClick("yes")}
+                className={
+                  "answer-button"
+                  // selectedAnswers.yes === moralDescriptors[item]
+                  //   ? "answer-selected"
+                  //   : ""
+                }
               >
-                <img
-                  src={imageSources.positive.source}
-                  alt="Positive"
-                  className={
-                    selectedImages.positive === moralDescriptors[item]
-                      ? "image-pop-up"
-                      : ""
-                  }
-                />
-                <p>{imageSources.positive.description}</p>
+                Yes
               </a.button>
-            </div>
-            <div className="image-wrapper">
               <a.button
                 style={buttonProps}
-                onClick={() => handleButtonClick("negative")}
+                onClick={() => handleButtonClick("no")}
+                className={
+                  "answer-button"
+                  // selectedAnswers.yes === moralDescriptors[item]
+                  //   ? "answer-selected"
+                  //   : ""
+                }
               >
-                <img
-                  src={imageSources.negative.source}
-                  alt="Negative"
-                  className={
-                    selectedImages.negative === moralDescriptors[item]
-                      ? "image-pop-up"
-                      : ""
-                  }
-                />
-                <p>{imageSources.negative.description}</p>
+                No
               </a.button>
+              <button
+                className="unsure-button"
+                onClick={() => handleAnswerSelection("unsure")}
+              >
+                Unsure
+              </button>
             </div>
-          </>
+          </a.div>
         ))}
       </div>
-      <button
-        className="unsure-button"
-        onClick={() => handleImageSelection("unsure")}
-      >
-        Unsure
-      </button>
     </div>
   );
 };

@@ -63,7 +63,10 @@
     font-size: calc(.8rem + .7vw);
         cursor: pointer;
     transition: 0.5s ease;
+    margin: 0 .5em;
+
 }
+
 
 .unsure-button:hover {
     background:rgba(119, 88, 255, .5);
@@ -76,4 +79,21 @@
 
 .image-pop-up {
     transform: scale(1.2);
+}
+
+.answer-button{
+    border-radius: 2em;
+    border: none;
+    padding: 0.5em 1em;
+    background-color: rgba(119, 88, 255, 0.12);
+    color: rgba(119, 88, 255, 1);
+    font-weight: bold;
+    font-size: calc(.8rem + .7vw);
+    cursor: pointer;
+    transition: 0.5s ease;
+    margin: 0 .5em;
+
+}
+.question-wrapper{
+    margin-bottom: 1em;
 }

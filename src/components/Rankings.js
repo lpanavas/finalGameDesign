@@ -31,6 +31,7 @@ const Rankings = ({ outputData, selectedCards, onRestartGame }) => {
         const sortedPublicRankings = Object.entries(response.data.ratings).sort(
           (a, b) => b[1] - a[1]
         );
+        console.log(sortedPublicRankings);
         setRankings(sortedPublicRankings);
         setPublicRankings(sortedPublicRankings);
       })
@@ -132,7 +133,7 @@ const Rankings = ({ outputData, selectedCards, onRestartGame }) => {
     const sortedUserRankings = Object.entries(ratings).sort(
       (a, b) => b[1] - a[1]
     );
-
+    console.log(sortedUserRankings);
     setUserRankings(sortedUserRankings);
   }, [outputData]);
 
@@ -218,9 +219,9 @@ const Rankings = ({ outputData, selectedCards, onRestartGame }) => {
         <h1>Results</h1>
         <h3>
           Explore your game results and see how you compare with others. See how
-          you ranked the technologies and how it matches up to others. Click any
-          card in Your Rankings to find out the risk level!
+          you ranked the technologies and how it matches up to others.
         </h3>
+        <h3>Click any card in Your Rankings to find out the risk level!</h3>
       </div>
 
       <div className="middle-rankings">
@@ -339,7 +340,7 @@ const Rankings = ({ outputData, selectedCards, onRestartGame }) => {
       </div>
       <div className="bottom-rankings">
         <div className="rankings-columns">
-          <p className="card-text">Least Worried</p>
+          <p className="card-text">Most Worried</p>
           {userRankings ? (
             userRankings.map(([id, rank]) => (
               <div
@@ -371,10 +372,10 @@ const Rankings = ({ outputData, selectedCards, onRestartGame }) => {
           ) : (
             <p>Loading...</p>
           )}{" "}
-          <p className="card-text">Most Worried</p>
+          <p className="card-text">Least Worried</p>
         </div>
         <FlipMove className="rankings-columns">
-          <p className="card-text">Least Worried</p>
+          <p className="card-text">Most Worried</p>
 
           {publicRankings ? (
             publicRankings.map(([id, rank]) => (
@@ -397,12 +398,17 @@ const Rankings = ({ outputData, selectedCards, onRestartGame }) => {
             <p>Loading...</p>
           )}
 
-          <p className="card-text">Most Worried</p>
+          <p className="card-text">Least Worried</p>
         </FlipMove>
       </div>
-      <button className="restart-game" onClick={onRestartGame}>
-        Restart Game
-      </button>
+      <div className="bottom-bottom-rankings">
+        <p className="bottom-text">
+          Ready for more? Explore and rank five new technologies!
+        </p>
+        <button className="restart-game" onClick={onRestartGame}>
+          Play Again
+        </button>
+      </div>
     </div>
   );
 };

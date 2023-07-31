@@ -44,9 +44,4 @@
     background-color: darkgray; /* Optional, for a hover effect */
   }
 
-  .restart-game {
-    position: relative;
-    bottom: 3em;
-    margin: 0 auto;
-    display: flex;
-  }
+  
