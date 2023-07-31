@@ -1,0 +1,36 @@
+{
+  "files": {
+    "main.css": "/static/css/main.0a81a14b.css",
+    "main.js": "/static/js/main.316ec3cb.js",
+    "static/js/787.28cb0dcd.chunk.js": "/static/js/787.28cb0dcd.chunk.js",
+    "static/media/7.png": "/static/media/7.95114036be5f87ab0721.png",
+    "static/media/8.png": "/static/media/8.8ae55fdaec0f80ca251e.png",
+    "static/media/6.png": "/static/media/6.0d23ffb7b4e64af0f284.png",
+    "static/media/3.png": "/static/media/3.e3d905410117532cc30f.png",
+    "static/media/4.png": "/static/media/4.67b97fc9d7dc6195fc99.png",
+    "static/media/5.png": "/static/media/5.64327714ce25a578a26e.png",
+    "static/media/fa-solid-900.ttf": "/static/media/fa-solid-900.4a2cd718d7031b732e76.ttf",
+    "static/media/2.png": "/static/media/2.c5e975a3642725776415.png",
+    "static/media/1.png": "/static/media/1.f4947f292ca3e57ce4d2.png",
+    "static/media/fa-brands-400.ttf": "/static/media/fa-brands-400.150de8eaa454d669c405.ttf",
+    "static/media/fa-solid-900.woff2": "/static/media/fa-solid-900.bb975c966c37455a1bc3.woff2",
+    "static/media/firstSlide.png": "/static/media/firstSlide.f1e1ffc76f4998e703c2.png",
+    "static/media/robot-logo.png": "/static/media/robot-logo.bc30243a1bd07d361c86.png",
+    "static/media/fa-brands-400.woff2": "/static/media/fa-brands-400.e033a13ee751afc1860c.woff2",
+    "static/media/secondSlide.png": "/static/media/secondSlide.b24f9b7d8beb3e4d5a7c.png",
+    "static/media/fa-regular-400.ttf": "/static/media/fa-regular-400.d87474231f4192884802.ttf",
+    "static/media/fourthSlide.PNG": "/static/media/fourthSlide.3dd0ea18081ef003a314.PNG",
+    "static/media/thirdSlide.png": "/static/media/thirdSlide.fb0fda962cf1838b9db4.png",
+    "static/media/fa-regular-400.woff2": "/static/media/fa-regular-400.3223dc79c1adee56370b.woff2",
+    "static/media/fa-v4compatibility.ttf": "/static/media/fa-v4compatibility.0e3a648be390bd8cb094.ttf",
+    "static/media/fa-v4compatibility.woff2": "/static/media/fa-v4compatibility.68577e40f3e70067b5da.woff2",
+    "index.html": "/index.html",
+    "main.0a81a14b.css.map": "/static/css/main.0a81a14b.css.map",
+    "main.316ec3cb.js.map": "/static/js/main.316ec3cb.js.map",
+    "787.28cb0dcd.chunk.js.map": "/static/js/787.28cb0dcd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0a81a14b.css",
+    "static/js/main.316ec3cb.js"
+  ]
+}
