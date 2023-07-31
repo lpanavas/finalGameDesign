@@ -24,6 +24,9 @@
     
     
 }
+.technology-card:hover {
+    background-color:   #bcdfc1
+}
 
 
 .percentage-display {

@@ -129,8 +129,9 @@ const Rankings = ({ outputData, selectedCards, onRestartGame }) => {
         }
       }
     }
+    console.log(sortedUserRankings);
     const sortedUserRankings = Object.entries(ratings).sort(
-      (a, b) => b[1] - a[1]
+      (a, b) => a[1] - b[1]
     );
     setUserRankings(sortedUserRankings);
   }, [outputData]);

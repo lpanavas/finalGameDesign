@@ -2,9 +2,9 @@
    position: relative;
     width: 60%;
     bottom: 1em;
-    border-radius: 2em;
-    background-color: #7758FF;
-    color: #fff;
+    /* border-radius: 2em; */
+    background-color: #929292;
+    color: black;
     text-align: center;
     padding: 10px;
     margin-top: 8vh;

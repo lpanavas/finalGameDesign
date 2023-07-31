@@ -78,7 +78,7 @@
   }
 
   .landing-page-button {
-    font-family: 'Roboto Mono', monospace;
+    font-family: "Montserrat", monospace;
 
     font-size: x-large; /* Increase the font size to make the text larger */
     margin: 1em;
@@ -98,11 +98,15 @@
 
 
   .nextButton{
+    font-family: "Montserrat", monospace;
+
     opacity: .2;
     margin-top: 3em;
   }
 
   .previousButton{
+    font-family: "Montserrat", monospace;
+
     opacity: .2;
     margin-top: 3em;
 

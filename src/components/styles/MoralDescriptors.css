@@ -38,6 +38,7 @@
 }
 
 .image-wrapper button, .image-wrapper a.button {
+    font-family: "Montserrat", monospace;
 
     background-color: transparent;
     border: none;
@@ -53,6 +54,8 @@
 }
 
 .unsure-button {
+    font-family: "Montserrat", monospace;
+
     border-radius: 2em;
 
     border: none;
@@ -82,6 +85,8 @@
 }
 
 .answer-button{
+    font-family: "Montserrat", monospace;
+
     border-radius: 2em;
     border: none;
     padding: 0.5em 1em;

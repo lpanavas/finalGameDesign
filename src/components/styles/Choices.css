@@ -8,6 +8,8 @@
 }
 
 .button {
+  font-family: "Montserrat", monospace;
+
   background: #4CAF50;
   border: none;
   color: white;
@@ -25,6 +27,8 @@
 
 @media screen and (min-width: 768px) {
   .button {
+    font-family: "Montserrat", monospace;
+
     width: 70%;
   }
 }
@@ -37,6 +41,8 @@
 
 
 .button:hover {
+  font-family: "Montserrat", monospace;
+
   color: white;
   animation: infinite pulse 1s;
   box-shadow: 0 0 0 1em transparent;
@@ -47,6 +53,8 @@
   }
 
 .button:disabled {
+  font-family: "Montserrat", monospace;
+
   background: white;
   color: white;
   cursor: not-allowed;

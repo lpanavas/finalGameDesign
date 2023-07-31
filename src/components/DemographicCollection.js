@@ -139,8 +139,9 @@ const DemographicCollection = ({
     <div className="demographicQuestions">
       <h2>
         Please fill out the following demographic information to see your
-        results. All fields are required:
+        results. <br></br> All fields are required:
       </h2>
+
       <form onSubmit={handleSubmit}>
         <Select
           className="genderSelect"

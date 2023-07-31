@@ -80,6 +80,8 @@
   
   
   button {
+    font-family: "Montserrat", monospace;
+
     border-radius: 2em;
     border:none;
     padding: 0.5em 1em; /* vertical padding (top and bottom) and horizontal padding (left and right) */
@@ -87,9 +89,15 @@
     color: rgba(119, 88, 255, 1); 
     font-weight: bold; 
     font-size: calc(.8rem + .7vw)}
+
+    
+    button:hover {
+      cursor: pointer;
+      background-color: rgba(119, 88, 255, 0.411);
+    }
   
   .descriptors button:hover {
-    background: black;
+    background:  rgba(119, 88, 255, 0.411);
     color: white;
   }
   
@@ -139,6 +147,8 @@
   }
   
   .agreement-question .button-container {
+    font-family: "Montserrat", monospace;
+
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -175,7 +185,7 @@
   .agreement-question button:hover,
   .agreement-question button:focus {
  
-   
+    background:  rgba(119, 88, 255, 0.411);
     transform: translateY(-5px);
   }
   

@@ -39,6 +39,8 @@
  
   
   button[type="submit"] {
+    font-family: "Montserrat", monospace;
+
     padding: 0.5em 1em;
     border: none;
     border-radius: 4px;
@@ -46,6 +48,8 @@
   }
   
   .demographicButton {
+    font-family: "Montserrat", monospace;
+
     padding: 0.5em 1em;
     background-color: gray;
     color: white;
@@ -55,6 +59,8 @@
   }
   
   .demographicButton:hover {
+    font-family: "Montserrat", monospace;
+
     background-color: darkgray;
   }
   

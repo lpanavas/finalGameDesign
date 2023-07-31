@@ -24,7 +24,7 @@ const ScoreBar = ({ score, currentPairIndex }) => {
   }, [score, currentPairIndex]);
 
   const barProps = useSpring({
-    backgroundColor: displayChange ? "#26925F" : "#7758FF",
+    backgroundColor: displayChange ? "#26925F" : "#f5f5f5",
     config: { tension: 210, friction: 20 },
   });
 
