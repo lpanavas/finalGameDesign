@@ -148,7 +148,6 @@ const DemographicCollection = ({
           options={genders}
           value={genders.find((obj) => obj.value === gender)}
           onChange={(selectedOption) => setGender(selectedOption.value)}
-          isSearchable
         />
 
         <Select
@@ -157,7 +156,6 @@ const DemographicCollection = ({
           options={ages}
           value={ages.find((obj) => obj.value === age)}
           onChange={(selectedOption) => setAge(selectedOption.value)}
-          isSearchable
         />
 
         <Select
@@ -166,7 +164,6 @@ const DemographicCollection = ({
           options={educations}
           value={educations.find((obj) => obj.value === education)}
           onChange={(selectedOption) => setEducation(selectedOption.value)}
-          isSearchable
         />
 
         <Select
@@ -175,7 +172,6 @@ const DemographicCollection = ({
           options={races}
           value={races.find((obj) => obj.value === race)}
           onChange={(selectedOption) => setRace(selectedOption.value)}
-          isSearchable
         />
         <Select
           className="techSelect"
@@ -183,7 +179,6 @@ const DemographicCollection = ({
           options={techExperience}
           value={techExperience.find((option) => option.value === tech)}
           onChange={(selectedOption) => setTech(selectedOption.value)}
-          isSearchable
         />
 
         <Select

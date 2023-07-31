@@ -118,7 +118,7 @@
 .main-column {
     width: 100%;
     z-index: 1;
-    padding: .5em;
+    padding: 1em;
     justify-content: space-between; /* This distributes space between h5 and h3 */
 
 }

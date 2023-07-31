@@ -26,21 +26,26 @@
 }
 
 .tutorialImageContainer {
-    width: 100%;
+    width: 90%;
     margin-top: 1em;
   
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 700px) {
     .tutorialImageContainer {
         width: 60%;
     }
 }
 
 /* For desktops */
-@media (min-width: 1800px) {
+@media (min-width: 1000px) {
     .tutorialImageContainer {
-        width: 35%;
+        width: 40%;
+    }
+}
+@media (min-width: 1500px) {
+    .tutorialImageContainer {
+        width: 30%;
     }
 }
 

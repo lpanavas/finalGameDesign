@@ -29,7 +29,7 @@ const TechnologyCard = ({
   });
 
   const opacityProps1 = useSpring({
-    to: clicked2 ? { opacity: 0.5 } : {},
+    to: clicked2 ? { opacity: 0.4 } : {},
     config: { tension: 210, friction: 20 },
   });
 
@@ -41,7 +41,7 @@ const TechnologyCard = ({
   });
 
   const opacityProps2 = useSpring({
-    to: clicked1 ? { opacity: 0.5 } : {},
+    to: clicked1 ? { opacity: 0.4 } : {},
     config: { tension: 210, friction: 20 },
   });
 

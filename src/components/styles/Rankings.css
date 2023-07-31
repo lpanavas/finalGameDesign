@@ -188,4 +188,5 @@
 }
 .bottom-text{
   font-size: calc(.8rem + .7vw);
+  margin-top: 1em;
 }

@@ -31,7 +31,6 @@ const Rankings = ({ outputData, selectedCards, onRestartGame }) => {
         const sortedPublicRankings = Object.entries(response.data.ratings).sort(
           (a, b) => b[1] - a[1]
         );
-        console.log(sortedPublicRankings);
         setRankings(sortedPublicRankings);
         setPublicRankings(sortedPublicRankings);
       })
@@ -133,7 +132,6 @@ const Rankings = ({ outputData, selectedCards, onRestartGame }) => {
     const sortedUserRankings = Object.entries(ratings).sort(
       (a, b) => b[1] - a[1]
     );
-    console.log(sortedUserRankings);
     setUserRankings(sortedUserRankings);
   }, [outputData]);
 
@@ -246,7 +244,7 @@ const Rankings = ({ outputData, selectedCards, onRestartGame }) => {
                 <option value="Gender">Gender</option>
                 <option value="Age">Age</option>
                 <option value="Race">Race</option>
-                <option value="Education">Education Level</option>
+                {/* <option value="Education">Education Level</option> */}
               </select>
             </div>
           </div>
@@ -308,7 +306,7 @@ const Rankings = ({ outputData, selectedCards, onRestartGame }) => {
                     <option value="65+">65+</option>
                   </select>
                 )}
-
+                {/* 
                 {demographic.type === "Education" && (
                   <select
                     className="rankings-selection"
@@ -324,7 +322,7 @@ const Rankings = ({ outputData, selectedCards, onRestartGame }) => {
                     <option value="Masters">Masters</option>
                     <option value="PhD">PhD</option>
                   </select>
-                )}
+                )} */}
               </div>
             )}
           </div>
@@ -364,7 +362,13 @@ const Rankings = ({ outputData, selectedCards, onRestartGame }) => {
                   </div>
                 ) : (
                   <p className="card-text">
-                    {cardIdToTitle[id].replace("AI system designed for ", "")}
+                    {cardIdToTitle[id]
+                      .replace("AI system designed for ", "")
+                      .charAt(0)
+                      .toUpperCase() +
+                      cardIdToTitle[id]
+                        .replace("AI system designed for ", "")
+                        .slice(1)}
                   </p>
                 )}
               </div>
@@ -390,7 +394,13 @@ const Rankings = ({ outputData, selectedCards, onRestartGame }) => {
                 }}
               >
                 <p className="card-text">
-                  {cardIdToTitle[id].replace("AI system designed for ", "")}
+                  {cardIdToTitle[id]
+                    .replace("AI system designed for ", "")
+                    .charAt(0)
+                    .toUpperCase() +
+                    cardIdToTitle[id]
+                      .replace("AI system designed for ", "")
+                      .slice(1)}
                 </p>
               </div>
             ))

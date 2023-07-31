@@ -5,7 +5,6 @@ exports.addGameData = (req, res) => {
   const outputData = req.body.outputData;
 
   const newData = new GameData({ userID, outputData });
-  console.log(newData);
   newData
     .save()
     .then(() => res.json("Data added!"))
@@ -16,7 +15,7 @@ exports.calculateRankings = async (req, res) => {
   const { cards, demographics } = req.body;
   const key = Object.keys(demographics)[0];
   const value = demographics[key];
-  console.log(req.body);
+  console.log(key, value);
 
   const pipeline = [
     { $unwind: "$outputData" },
@@ -33,9 +32,7 @@ exports.calculateRankings = async (req, res) => {
   ];
 
   const allGameData = await GameData.aggregate(pipeline);
-
-  console.log(allGameData);
-
+  console.log(allGameData.length);
   let rankings = {};
   let ratings = {};
   const K = 40;
@@ -123,7 +120,6 @@ exports.calculateRankings = async (req, res) => {
       }
     }
   }
-  console.log(rankings, ratings);
   res.json({ rankings, ratings });
 };
 
