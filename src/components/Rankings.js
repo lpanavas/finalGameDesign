@@ -129,7 +129,7 @@ const Rankings = ({ outputData, selectedCards, onRestartGame }) => {
         }
       }
     }
-    console.log(sortedUserRankings);
+
     const sortedUserRankings = Object.entries(ratings).sort(
       (a, b) => a[1] - b[1]
     );
@@ -211,16 +211,21 @@ const Rankings = ({ outputData, selectedCards, onRestartGame }) => {
     const matchingCard = selectedCards.find((card) => card.ID === id);
     return matchingCard;
   };
-
   return (
     <div className="rankings">
       <div className="rankings-header">
-        <h1>Results</h1>
-        <h3>
+        {outputData.Attention === "Nuclear" && outputData.gameDuration > 30 ? (
+          <h1>
+            MTurk: Your survey response code is: <b>rai-game</b>
+          </h1>
+        ) : (
+          <h1>MTurk: You failed the attention checks of the survey.</h1>
+        )}
+        {/* <h3>
           Explore your game results and see how you compare with others. See how
           you ranked the technologies and how it matches up to others.
         </h3>
-        <h3>Click any card in Your Rankings to find out the risk level!</h3>
+        <h3>Click any card in Your Rankings to find out the risk level!</h3> */}
       </div>
 
       <div className="middle-rankings">
