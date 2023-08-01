@@ -214,12 +214,13 @@ const Rankings = ({ outputData, selectedCards, onRestartGame }) => {
   return (
     <div className="rankings">
       <div className="rankings-header">
-        {outputData.Attention === "Nuclear" && outputData.gameDuration > 30 ? (
+        {outputData.Attention === "Nuclear" && outputData.gameDuration > 80 ? (
           <h1>
-            MTurk: Your survey response code is: <b>rai-game</b>
+            Prolific: Your survey response url is:{" "}
+            <b>https://app.prolific.co/submissions/complete?cc=C10J0SSR</b>
           </h1>
         ) : (
-          <h1>MTurk: You failed the attention checks of the survey.</h1>
+          <h1> You failed the attention checks of the survey.</h1>
         )}
         {/* <h3>
           Explore your game results and see how you compare with others. See how
