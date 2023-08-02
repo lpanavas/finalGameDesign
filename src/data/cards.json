@@ -582,7 +582,7 @@
     "reference": "",
     "title": "AI system designed for creating deep fakes",
     "ID": "DeepFakeCreation",
-    "classification": "On the brink of High Risk",
+    "classification": "Low Risk",
     "semanticModel": {
       "domain": "Multimedia Content Creation",
       "purpose": "Content Creation",
@@ -608,7 +608,7 @@
     "reference": "",
     "title": "AI system designed for personalized learning in education",
     "ID": "PersonalizedLearning",
-    "classification": "On the brink of High Risk",
+    "classification": "Low Risk",
     "semanticModel": {
       "domain": "Education",
       "purpose": "Personalized Learning",
