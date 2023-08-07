@@ -220,20 +220,16 @@ const Rankings = ({
     <div className="rankings">
       <div className="rankings-header">
         {outputData.Attention === "Nuclear" && outputData.gameDuration > 60 ? (
-          hasSeenTutorial ? (
-            outputData.score === 50 ? (
-              <h1>
-                Prolific: Your survey response url is:{" "}
-                <b>https://app.prolific.co/submissions/complete?cc=CNTH5V0J</b>
-              </h1>
-            ) : (
-              <h1>
-                Prolific: Your survey response url is:{" "}
-                <b>https://app.prolific.co/submissions/complete?cc=C1LXG0XQ</b>
-              </h1>
-            )
+          outputData.score === 50 ? (
+            <h1>
+              Prolific: Your survey response url is:{" "}
+              <b>https://app.prolific.co/submissions/complete?cc=CU5D8FRB</b>
+            </h1>
           ) : (
-            <h1>Please click Play Again at the bottom.</h1>
+            <h1>
+              Prolific: Your survey response url is:{" "}
+              <b>https://app.prolific.co/submissions/complete?cc=C11UWEIH</b>
+            </h1>
           )
         ) : (
           <h1>You failed the attention checks of the survey.</h1>
