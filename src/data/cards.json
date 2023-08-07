@@ -477,7 +477,7 @@
     "reference": "",
     "title": "AI system designed for detecting faulty equipment in factories",
     "ID": "FaultDetectionInFactories",
-    "classification": "Low Risk",
+    "classification": "High Risk",
     "semanticModel": {
       "domain": "Manufacturing",
       "purpose": "Fault Detection",
@@ -552,19 +552,7 @@
       "AI_subject": "Social Media Content"
     }
   },
-  {
-    "reference": "",
-    "title": "AI system designed for automated decision-making in healthcare",
-    "ID": "AutomatedHealthcareDecisionMaking",
-    "classification": "Low Risk",
-    "semanticModel": {
-      "domain": "Healthcare",
-      "purpose": "Automated Decision-making",
-      "AI_capability": "Machine Learning",
-      "AI_user": "Healthcare Providers",
-      "AI_subject": "Patients"
-    }
-  },
+
   {
     "reference": "",
     "title": "AI system designed for synthesizing new drug compounds",

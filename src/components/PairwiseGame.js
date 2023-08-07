@@ -135,6 +135,7 @@ const PairwiseGame = ({
         Moral: moralChoices,
         Attention: attentionCheck,
         gameDuration: gameDurationInSeconds,
+        score: score,
       });
 
       // Output the final JSON
@@ -147,6 +148,7 @@ const PairwiseGame = ({
           Moral: moralChoices,
           Attention: attentionCheck,
           gameDuration: gameDurationInSeconds,
+          score: score,
         };
 
         setOutputData(finalData);

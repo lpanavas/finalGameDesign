@@ -21,6 +21,7 @@ function App() {
   const [demographics, setDemographics] = useState(null);
   const [hasSeenTutorial, setHasSeenTutorial] = useState(false);
 
+  console.log();
   const handleStartGame = () => {
     if (!hasSeenTutorial) {
       setCurrentPage("tutorial");
@@ -32,13 +33,13 @@ function App() {
   };
 
   const handleRestartGame = () => {
+    setHasSeenTutorial(true);
     const shuffledCards = [...cards].sort(() => 0.5 - Math.random());
     setSelectedCards(shuffledCards.slice(0, 5));
     setCurrentPage("game");
   };
 
   const handleEndTutorial = () => {
-    setHasSeenTutorial(true);
     const shuffledCards = [...cards].sort(() => 0.5 - Math.random());
     setSelectedCards(shuffledCards.slice(0, 5));
     setCurrentPage("game");
@@ -47,7 +48,7 @@ function App() {
   const saveGameData = (userID, outputData) => {
     axios
       .post(
-        `https://ec2-3-15-202-100.us-east-2.compute.amazonaws.com/data/add`,
+        `http://ec2-18-221-101-51.us-east-2.compute.amazonaws.com/data/add`,
         { userID, outputData }
       )
       .then((res) => console.log("Data added!"))
@@ -89,6 +90,7 @@ function App() {
           onRestartGame={handleRestartGame}
           outputData={outputData}
           selectedCards={selectedCards}
+          hasSeenTutorial={hasSeenTutorial}
         />
       )}
     </div>

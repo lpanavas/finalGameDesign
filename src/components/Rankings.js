@@ -8,7 +8,12 @@ import "./styles/Rankings.css";
 import chroma from "chroma-js";
 Modal.setAppElement("#root");
 
-const Rankings = ({ outputData, selectedCards, onRestartGame }) => {
+const Rankings = ({
+  outputData,
+  selectedCards,
+  onRestartGame,
+  hasSeenTutorial,
+}) => {
   const [rankings, setRankings] = useState(null);
   const [userRankings, setUserRankings] = useState(null);
   const [publicRankings, setPublicRankings] = useState(null);
@@ -19,7 +24,7 @@ const Rankings = ({ outputData, selectedCards, onRestartGame }) => {
   const [flippedCardIds, setFlippedCardIds] = useState([]);
 
   useEffect(() => {
-    console.log("outputData changed:");
+    console.log("outputData changed:", outputData);
   }, [outputData]);
 
   useEffect(() => {
@@ -214,14 +219,26 @@ const Rankings = ({ outputData, selectedCards, onRestartGame }) => {
   return (
     <div className="rankings">
       <div className="rankings-header">
-        {outputData.Attention === "Nuclear" && outputData.gameDuration > 80 ? (
-          <h1>
-            Prolific: Your survey response url is:{" "}
-            <b>https://app.prolific.co/submissions/complete?cc=C10J0SSR</b>
-          </h1>
+        {outputData.Attention === "Nuclear" && outputData.gameDuration > 60 ? (
+          hasSeenTutorial ? (
+            outputData.score === 50 ? (
+              <h1>
+                Prolific: Your survey response url is:{" "}
+                <b>https://app.prolific.co/submissions/complete?cc=C1FHVI7Z</b>
+              </h1>
+            ) : (
+              <h1>
+                Prolific: Your survey response url is:{" "}
+                <b>https://app.prolific.co/submissions/complete?cc=C46SW1QC</b>
+              </h1>
+            )
+          ) : (
+            <h1>Please click Play Again at the bottom.</h1>
+          )
         ) : (
-          <h1> You failed the attention checks of the survey.</h1>
+          <h1>You failed the attention checks of the survey.</h1>
         )}
+
         {/* <h3>
           Explore your game results and see how you compare with others. See how
           you ranked the technologies and how it matches up to others.
