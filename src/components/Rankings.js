@@ -223,12 +223,12 @@ const Rankings = ({
           outputData.score === 50 ? (
             <h1>
               Prolific: Your survey response url is:{" "}
-              <b>https://app.prolific.co/submissions/complete?cc=CU5D8FRB</b>
+              <b>https://app.prolific.co/submissions/complete?cc=C11UWEIH</b>
             </h1>
           ) : (
             <h1>
               Prolific: Your survey response url is:{" "}
-              <b>https://app.prolific.co/submissions/complete?cc=C11UWEIH</b>
+              <b>https://app.prolific.co/submissions/complete?cc=CU5D8FRB</b>
             </h1>
           )
         ) : (
