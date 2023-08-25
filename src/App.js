@@ -47,7 +47,7 @@ function App() {
 
   const saveGameData = (userID, outputData) => {
     axios
-      .post(`http://ec2-3-15-141-89.us-east-2.compute.amazonaws.com/data/add`, {
+      .post(`localhost:5000/data/add`, {
         userID,
         outputData,
       })
