@@ -10,15 +10,15 @@ To get the application up and running on your local machine, follow these steps:
 
 ### Clone the Repository
 
-\```bash
+```bash
 git clone https://github.com/lpanavas/finalGameDesign.git
-\```
+```
 
 ### Navigate to the Project Directory
 
-\```bash
+```bash
 cd finalGameDesign
-\```
+```
 
 ### Install Frontend Dependencies
 
@@ -28,15 +28,15 @@ npm install
 
 ### Navigate to the Server Directory
 
-\```bash
+ ```bash
 cd server
-\```
+ ```
 
 ### Install Backend Dependencies
 
-\```bash
+ ```bash
 npm install
-\```
+ ```
 
 ### Create Environment File
 
@@ -44,17 +44,17 @@ Create a new file named `.env` in the `server` directory using your preferred te
 
 ### Run the Backend
 
-\```bash
+ ```bash
 npm run dev
-\```
+ ```
 
 ### Run the Frontend
 
 Navigate back to the `finalGameDesign` directory and run:
 
-\```bash
+ ```bash
 npm start
-\```
+ ```
 
 ## Frontend: React
 
