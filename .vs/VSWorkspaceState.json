@@ -1,9 +1,13 @@
 {
   "ExpandedNodes": [
     "",
-    "\\src",
-    "\\src\\data"
+    "\\server",
+    "\\server\\controllers",
+    "\\server\\models",
+    "\\server\\routes",
+    "\\src\\components\\styles",
+    "\\src\\pages"
   ],
-  "SelectedNode": "\\src\\data\\cards.json",
+  "SelectedNode": "\\server\\controllers\\dataController.js",
   "PreviewInSolutionExplorer": false
 }

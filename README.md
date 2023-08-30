@@ -1,70 +1,101 @@
-# Getting Started with Create React App
+# finalGameDesign Repository Overview
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Introduction
 
-## Available Scripts
+The `finalGameDesign` repository is a web application that employs React for the frontend, Node.js for the backend, and MongoDB as the database. This document aims to elucidate the repository's structure and functionality, targeting those unfamiliar with these technologies.
 
-In the project directory, you can run:
+## Setting Up the Repository Locally
 
-### `npm start`
+To get the application up and running on your local machine, follow these steps:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Clone the Repository
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+\```bash
+git clone https://github.com/lpanavas/finalGameDesign.git
+\```
 
-### `npm test`
+### Navigate to the Project Directory
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+\```bash
+cd finalGameDesign
+\```
 
-### `npm run build`
+### Install Frontend Dependencies
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+\```bash
+npm install
+\```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Navigate to the Server Directory
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+\```bash
+cd server
+\```
 
-### `npm run eject`
+### Install Backend Dependencies
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+\```bash
+npm install
+\```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Create Environment File
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Create a new file named `.env` in the `server` directory using your preferred text editor. Paste your MongoDB URI string and save the file.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Run the Backend
 
-## Learn More
+\```bash
+npm run dev
+\```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Run the Frontend
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Navigate back to the `finalGameDesign` directory and run:
 
-### Code Splitting
+\```bash
+npm start
+\```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Frontend: React
 
-### Analyzing the Bundle Size
+### Entry Point
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- `src/App.js`: Sets up routing to different pages.
 
-### Making a Progressive Web App
+### Pages
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- Various pages like `LandingPage.js`, `GamePage.js`, etc., handle different aspects of the user interface.
 
-### Advanced Configuration
+### Components
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- Reusable UI elements like `Button.js` and `Choices.js`.
 
-### Deployment
+### Data
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- JSON files such as `cards.json` and `comparisons.json` store game data.
 
-### `npm run build` fails to minify
+## Backend: Node.js
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Server Setup
+
+- `server/server.js`: Initializes the server and MongoDB connection.
+
+### Routes
+
+- `server/routes/index.js`: Defines API routes for data retrieval and manipulation.
+
+### Controllers
+
+- `server/controllers/dataController.js`: Implements the logic for API routes.
+
+## Frontend-Backend Communication
+
+The frontend and backend communicate via HTTP requests, often using the `fetch` API in React. The backend exposes several API endpoints defined in `server/routes/index.js`. When the frontend needs data or wants to send data, it makes a request to these endpoints. The backend then processes the request and sends back a response, which the frontend uses to update the UI.
+
+## Database: MongoDB
+
+- MongoDB is used for data storage, with the schema defined in `server/models/data.model.js`.
+
+## Additional Information
+
+- `README.md`: Provides some basic documentation.

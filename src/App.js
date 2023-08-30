@@ -21,7 +21,6 @@ function App() {
   const [demographics, setDemographics] = useState(null);
   const [hasSeenTutorial, setHasSeenTutorial] = useState(false);
 
-  console.log();
   const handleStartGame = () => {
     if (!hasSeenTutorial) {
       setCurrentPage("tutorial");

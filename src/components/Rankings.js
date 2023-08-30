@@ -219,27 +219,27 @@ const Rankings = ({
   return (
     <div className="rankings">
       <div className="rankings-header">
-        {outputData.Attention === "Nuclear" && outputData.gameDuration > 60 ? (
-          outputData.score === 50 ? (
-            <h1>
-              Prolific: Your survey response url is:{" "}
-              <b>https://app.prolific.co/submissions/complete?cc=C11UWEIH</b>
-            </h1>
-          ) : (
-            <h1>
-              Prolific: Your survey response url is:{" "}
-              <b>https://app.prolific.co/submissions/complete?cc=CU5D8FRB</b>
-            </h1>
-          )
-        ) : (
-          <h1>You failed the attention checks of the survey.</h1>
-        )}
+        {/*{outputData.Attention === "Nuclear" && outputData.gameDuration > 60 ? (*/}
+        {/*  outputData.score === 50 ? (*/}
+        {/*    <h1>*/}
+        {/*      Prolific: Your survey response url is:{" "}*/}
+        {/*      <b>https://app.prolific.co/submissions/complete?cc=C11UWEIH</b>*/}
+        {/*    </h1>*/}
+        {/*  ) : (*/}
+        {/*    <h1>*/}
+        {/*      Prolific: Your survey response url is:{" "}*/}
+        {/*      <b>https://app.prolific.co/submissions/complete?cc=CU5D8FRB</b>*/}
+        {/*    </h1>*/}
+        {/*  )*/}
+        {/*) : (*/}
+        {/*  <h1>You failed the attention checks of the survey.</h1>*/}
+        {/*)}*/}
 
-        {/* <h3>
+         <h3>
           Explore your game results and see how you compare with others. See how
           you ranked the technologies and how it matches up to others.
         </h3>
-        <h3>Click any card in Your Rankings to find out the risk level!</h3> */}
+        <h3>Click any card in Your Rankings to find out the risk level!</h3> 
       </div>
 
       <div className="middle-rankings">
