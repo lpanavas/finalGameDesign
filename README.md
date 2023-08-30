@@ -40,7 +40,7 @@ npm install
 
 ### Create Environment File
 
-Create a new file named `.env` in the `server` directory using your preferred text editor. Paste your MongoDB URI string and save the file.
+Create a new file named `.env` in the `server` directory using your preferred text editor. Paste your MongoDB URI string and save the file. Look at the AWS documentation doc to find the string. Search for ATLAS_URI
 
 ### Run the Backend
 
@@ -49,6 +49,8 @@ npm run dev
  ```
 
 ### Run the Frontend
+
+Open up a new terminal. 
 
 Navigate back to the `finalGameDesign` directory and run:
 
