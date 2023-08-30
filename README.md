@@ -22,9 +22,9 @@ cd finalGameDesign
 
 ### Install Frontend Dependencies
 
-\```bash
+```bash
 npm install
-\```
+```
 
 ### Navigate to the Server Directory
 
@@ -36,7 +36,7 @@ cd server
 
  ```bash
 npm install
- ```
+```
 
 ### Create Environment File
 
@@ -96,6 +96,3 @@ The frontend and backend communicate via HTTP requests, often using the `fetch` 
 
 - MongoDB is used for data storage, with the schema defined in `server/models/data.model.js`.
 
-## Additional Information
-
-- `README.md`: Provides some basic documentation.
