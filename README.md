@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The `finalGameDesign` repository is a web application that employs React for the frontend, Node.js for the backend, and MongoDB as the database. This document aims to elucidate the repository's structure and functionality, targeting those unfamiliar with these technologies.
+The `finalGameDesign` repository is a web application that employs React for the frontend, Node.js for the backend, and MongoDB as the database. 
 
 ## Setting Up the Repository Locally
 
